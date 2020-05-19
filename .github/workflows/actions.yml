@@ -15,7 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: payload
-        run: echo ${{ github.event.client_payload }}
+        run: | 
+          echo "github.event.client_payload.integration value:"
+          echo ${{ github.event.client_payload.integration }}
       - name: List Files
         run: |
           pwd
