@@ -1,14 +1,29 @@
 name: Actions Workflow
 
 on:
-  repository_dispatch:
-    types: [build]
+  push:
+    branches:
+      - master
+      - feature/*' # matches feature/featA, feature/featB .... doesn't match feature/feat/A
+      - 'feature/**'
+      - '!feature/featC' #ignore this branch
+    #branches-ignore:
+    #  - null
+    tags:
+      - v1.*
+    paths:
+      - '**.js'
+      - '!filename.js'  #ignore filename.js
+    #paths-ignore:
+    #  - null
+  #repository_dispatch:
+  #  types: [build]
   #schedule:
   #  - cron: "*/5 * * * *" #“At every 5th minute.”
   #  - cron: "*/6 * * * *" #“At every 6th minute.”
   #push:
-  pull_request:
-    types: [closed, assigned, opened, reopened]
+  #pull_request:
+  #  types: [closed, assigned, opened, reopened]
 
 jobs:
   run-github-actions:
