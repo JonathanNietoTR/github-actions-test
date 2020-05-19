@@ -1,11 +1,17 @@
 name: Actions Workflow
 
 on:
+<<<<<<< HEAD
   repository_dispatch:
     types: [build]
   #schedule:
   #  - cron: "*/5 * * * *" #“At every 5th minute.”
   #  - cron: "*/6 * * * *" #“At every 6th minute.”
+=======
+  schedule:
+    - cron: "*/5 * * * *"
+    - cron: "*/6 * * * *"
+>>>>>>> 4928df286d49e84562a439883cddc4782823aa6a
   #push:
   pull_request:
     types: [closed, assigned, opened, reopened]
