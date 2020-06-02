@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-16.04
     if: github.event_name == 'push'
     steps:
-      - name: Dump GitHub context
+      - name: Dump GitHub context checking th context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: eccho "$GITHUB_CONTEXT"
